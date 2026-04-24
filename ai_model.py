@@ -1,8 +1,14 @@
 import joblib
 import numpy as np
+import os
 
-model = joblib.load("model.pkl")
-vectorizer = joblib.load("vectorizer.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+model_path = os.path.join(BASE_DIR, "model.pkl")
+vectorizer_path = os.path.join(BASE_DIR, "vectorizer.pkl")
+
+model = joblib.load(model_path)
+vectorizer = joblib.load(vectorizer_path)
 
 
 def predict_story_points(text: str):
@@ -11,7 +17,6 @@ def predict_story_points(text: str):
 
         prediction = model.predict(X)[0]
 
-        # REAL confidence (now works)
         probabilities = model.predict_proba(X)[0]
         confidence = round(np.max(probabilities) * 100, 2)
 

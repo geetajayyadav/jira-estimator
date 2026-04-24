@@ -79,3 +79,7 @@ def estimate(issue_key: str):
 @app.get("/history")
 def history():
     return get_learning_data()
+
+@app.get("/")
+def home():
+    return {"message": "Jira AI Estimator Running 🚀"}
