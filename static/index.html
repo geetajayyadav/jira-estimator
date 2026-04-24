@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🚀 Jira AI Estimator (PRO)</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #3b82f6;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input {
+    padding: 10px;
+    width: 70%;
+    border-radius: 5px;
+    border: none;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 15px;
+    background: #334155;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.active {
+    background: #3b82f6;
+}
+
+.hidden {
+    display: none;
+}
+
+.highlight {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+/* NEW STYLES */
+.pdf-box {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pdf-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.pdf-btn:hover {
+    background: #2563eb;
+}
+
+.slide {
+    background: #1e293b;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚀 Jira AI Estimator (PRO)</h1>
+
+<!-- Tabs -->
+<div class="tabs">
+    <div class="tab-btn active" onclick="showTab('estimator')">Estimator</div>
+    <div class="tab-btn" onclick="showTab('summary')">Project Summary</div>
+    <div class="tab-btn" onclick="showTab('logic')">How It Works</div>
+</div>
+
+<!-- ===================== ESTIMATOR ===================== -->
+<div id="estimator">
+
+<div class="card">
+    <input id="issueKey" placeholder="Enter Jira Key (e.g. ABC-123)">
+    <button onclick="estimate()">Estimate</button>
+</div>
+
+<div id="result" class="card hidden"></div>
+
+</div>
+
+<!-- ===================== SUMMARY ===================== -->
+<div id="summary" class="hidden">
+
+<!-- PDF BUTTON -->
+<div class="pdf-box">
+    <h2>📄 Project Presentation</h2>
+    <p>Click below to view full presentation:</p>
+
+    <a href="/static/presentation.pdf" target="_blank" class="pdf-btn">
+        🚀 Open Presentation PDF
+    </a>
+</div>
+
+<!-- SCRUM LOGIC -->
+<div class="slide">
+<h2>🧠 How Scrum Master Estimates Story Points</h2>
+
+<ul>
+<li><b>Complexity</b> → How difficult is the task?</li>
+<li><b>Effort</b> → How much work is required?</li>
+<li><b>Risk</b> → Unknowns / dependencies</li>
+<li><b>Priority</b> → High priority = more effort</li>
+<li><b>Type</b> → Backend / UI / Database / Security</li>
+</ul>
+</div>
+
+<!-- EXAMPLE -->
+<div class="slide">
+<h2>📌 Example</h2>
+
+<p><b>Task:</b> Login system with database</p>
+
+<ul>
+<li>Database integration</li>
+<li>Authentication logic</li>
+<li>Error handling</li>
+</ul>
+
+<p class="highlight">Final Estimate → 5 Story Points</p>
+</div>
+
+<!-- AI LOGIC -->
+<div class="slide">
+<h2>🤖 How Our System Works</h2>
+
+<ul>
+<li>Machine Learning predicts points</li>
+<li>Rule Engine adjusts result</li>
+<li>LLM explains reasoning</li>
+</ul>
+</div>
+
+<!-- FINAL FLOW -->
+<div class="slide">
+<h2>🔄 Final Flow</h2>
+
+<p class="highlight">
+Input → Jira → AI → Rules → LLM → Output
+</p>
+</div>
+
+</div>
+
+<!-- ===================== LOGIC ===================== -->
+<div id="logic" class="hidden">
+
+<div class="card">
+<h2>🧠 Estimation Logic</h2>
+
+<p>
+This system combines AI + rule-based logic + historical learning
+to estimate story points accurately.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function showTab(tab) {
+    document.getElementById("estimator").classList.add("hidden");
+    document.getElementById("summary").classList.add("hidden");
+    document.getElementById("logic").classList.add("hidden");
+
+    document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+
+    document.getElementById(tab).classList.remove("hidden");
+    event.target.classList.add("active");
+}
+
+async function estimate() {
+    const key = document.getElementById("issueKey").value;
+
+    const resultDiv = document.getElementById("result");
+    resultDiv.classList.remove("hidden");
+
+    resultDiv.innerHTML = "<p>⏳ Estimating... please wait</p>";
+
+    try {
+        const res = await fetch(`/estimate/${key}`);
+        const data = await res.json();
+
+        if (data.error) {
+            resultDiv.innerHTML = `
+                <h2 style="color:red;">❌ Error</h2>
+                <p>${data.error}</p>
+                <p>${data.details || ""}</p>
+            `;
+            return;
+        }
+
+        const r = data.estimated_story_points || {};
+
+        resultDiv.innerHTML = `
+            <h2>📌 Result</h2>
+
+            <p><b>Story Points:</b> ${r.story_points || "-"}</p>
+            <p><b>AI Prediction:</b> ${r.ai_points || "-"}</p>
+            <p><b>Confidence:</b> ${r.confidence || "-"}%</p>
+
+            <h3>🧠 AI Reasoning</h3>
+            <p>${data.ai_reasoning || "-"}</p>
+
+            <h3>🤖 LLM Explanation</h3>
+            <p style="color:#22c55e;">${data.llm_reasoning || "-"}</p>
+
+            <h3>📌 Reasons</h3>
+            <ul>
+                ${(r.reasons || []).map(x => `<li>${x}</li>`).join("")}
+            </ul>
+        `;
+    } catch (err) {
+        resultDiv.innerHTML = `
+            <h2 style="color:red;">❌ Network Error</h2>
+            <p>${err}</p>
+        `;
+    }
+}
+
+</script>
+
+</body>
+</html>
