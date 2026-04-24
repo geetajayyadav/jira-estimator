@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>🚀 Jira AI Estimator (PRO)</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: #e2e8f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #3b82f6;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input {
+    padding: 10px;
+    width: 70%;
+    border-radius: 5px;
+    border: none;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 10px 15px;
+    background: #334155;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.active {
+    background: #3b82f6;
+}
+
+.hidden {
+    display: none;
+}
+
+.badge {
+    display: inline-block;
+    background: #475569;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.highlight {
+    color: #22c55e;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🚀 Jira AI Estimator (PRO)</h1>
+
+<!-- Tabs -->
+<div class="tabs">
+    <div class="tab-btn active" onclick="showTab('estimator')">Estimator</div>
+    <div class="tab-btn" onclick="showTab('summary')">Project Summary</div>
+    <div class="tab-btn" onclick="showTab('logic')">How It Works</div>
+</div>
+
+<!-- ===================== ESTIMATOR ===================== -->
+<div id="estimator">
+
+<div class="card">
+    <input id="issueKey" placeholder="Enter Jira Key (e.g. SCRUM-1)">
+    <button onclick="estimate()">Estimate</button>
+</div>
+
+<div id="result" class="card hidden"></div>
+
+</div>
+
+<!-- ===================== SUMMARY ===================== -->
+<div id="summary" class="hidden">
+
+<div class="card">
+<h2>📌 Project Overview</h2>
+
+<p>
+This project is a <b>hybrid AI-powered Jira story point estimation system</b> 
+designed to simulate real-world Scrum Master decision-making.
+</p>
+
+<p>
+Unlike basic ML systems, this solution integrates multiple intelligent layers 
+to produce <span class="highlight">accurate, explainable, and adaptive estimations</span>.
+</p>
+
+<h3>🧠 Core Intelligence Layers</h3>
+<ul>
+<li>Machine Learning (TF-IDF + classification)</li>
+<li>Rule-based domain logic</li>
+<li>Semantic similarity (past Jira learning)</li>
+<li>Risk & uncertainty detection</li>
+<li>Dependency analysis</li>
+<li>Business priority handling</li>
+<li>Confidence-based correction</li>
+<li>LLM-based explanation</li>
+</ul>
+
+<h3>🎯 Goal</h3>
+<p>
+To build a system that behaves like an experienced Scrum Master by combining 
+data, logic, and contextual reasoning.
+</p>
+
+</div>
+
+<div class="card">
+<h2>🧰 Technologies Used</h2>
+
+<span class="badge">FastAPI</span>
+<span class="badge">Scikit-learn</span>
+<span class="badge">TF-IDF</span>
+<span class="badge">Rule Engine</span>
+<span class="badge">Semantic Search</span>
+<span class="badge">Groq LLM</span>
+<span class="badge">Jira API</span>
+<span class="badge">JSON Learning System</span>
+
+</div>
+
+</div>
+
+<!-- ===================== LOGIC ===================== -->
+<div id="logic" class="hidden">
+
+<div class="card">
+<h2>🧠 ADVANCED ESTIMATION FRAMEWORK (PROFESSOR-LEVEL)</h2>
+
+<p>
+This system goes beyond basic estimation and applies real Scrum Master thinking:
+</p>
+
+<h3>🔥 1. Historical Intelligence (Past Jira Analysis)</h3>
+<p><b>Key Question:</b> “Have we done this before?”</p>
+<ul>
+<li>Find similar past Jira tickets</li>
+<li>Compare features, modules, keywords</li>
+<li>Use actual story points (not predicted)</li>
+</ul>
+
+<p class="highlight">
+If similarity > 80% → Trust historical points more than AI
+</p>
+
+<p><b>Example:</b></p>
+<pre>
+Past Issue: API Integration
+Similarity: 0.85
+Story Points: 8
+→ Current estimation ≈ 8
+</pre>
+
+<hr>
+
+<h3>🔥 2. Market / Business Context</h3>
+<ul>
+<li>Production issues</li>
+<li>Revenue-impact features</li>
+<li>Urgent sprint deadlines</li>
+</ul>
+
+<p class="highlight">
+Higher urgency → Higher story points
+</p>
+
+<hr>
+
+<h3>🔥 3. Technical + Risk + Uncertainty</h3>
+<ul>
+<li>Unknown requirements</li>
+<li>New features / exploration</li>
+<li>Migration complexity</li>
+</ul>
+
+<hr>
+
+<h3>🔥 4. Dependency Analysis</h3>
+<ul>
+<li>External APIs</li>
+<li>Third-party systems</li>
+<li>Cross-team dependencies</li>
+</ul>
+
+<hr>
+
+<h3>🔥 5. Team Context</h3>
+<ul>
+<li>Team experience level</li>
+<li>Technology familiarity</li>
+</ul>
+
+<p class="highlight">
+New tech → More uncertainty → Higher points
+</p>
+
+<hr>
+
+<h3>🔥 6. Breakdown Thinking (Real Scrum)</h3>
+<ul>
+<li>Frontend effort</li>
+<li>Backend effort</li>
+<li>Integration effort</li>
+<li>Testing effort</li>
+</ul>
+
+<hr>
+
+<h2>⚙️ FINAL COMPUTATION MODEL</h2>
+
+<pre>
+Final Score =
+(AI * 0.3) +
+(Technical * 0.2) +
+(Historical * 0.3) +
+(Market * 0.1) +
+(Uncertainty * 0.05) +
+(Dependency * 0.05)
+</pre>
+
+<p>
+Final score is then mapped to Fibonacci scale:
+</p>
+
+<pre>
+1, 2, 3, 5, 8, 13, 21
+</pre>
+
+<hr>
+
+<h2>💥 WHY THIS IS ADVANCED</h2>
+
+<p>❌ Basic systems: keyword → points</p>
+<p>✅ This system:</p>
+
+<ul>
+<li>Uses past data intelligently</li>
+<li>Considers real-world business pressure</li>
+<li>Accounts for uncertainty and dependencies</li>
+<li>Applies weighted decision-making</li>
+<li>Provides explainable output</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function showTab(tab) {
+    document.getElementById("estimator").classList.add("hidden");
+    document.getElementById("summary").classList.add("hidden");
+    document.getElementById("logic").classList.add("hidden");
+
+    document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+
+    document.getElementById(tab).classList.remove("hidden");
+    event.target.classList.add("active");
+}
+
+async function estimate() {
+    const key = document.getElementById("issueKey").value;
+
+    const res = await fetch(`/estimate/${key}`);
+    const data = await res.json();
+
+    const r = data.estimated_story_points;
+
+    document.getElementById("result").classList.remove("hidden");
+
+    document.getElementById("result").innerHTML = `
+        <h2>📌 Result</h2>
+
+        <p><b>Story Points:</b> ${r.story_points}</p>
+        <p><b>AI Prediction:</b> ${r.ai_points}</p>
+        <p><b>Confidence:</b> ${r.confidence}%</p>
+
+        <h3>🧠 AI Reasoning</h3>
+        <p>${data.ai_reasoning}</p>
+
+        <h3>🤖 LLM Explanation</h3>
+        <p style="color:#22c55e;">${data.llm_reasoning}</p>
+
+        <h3>📌 Reasons</h3>
+        <ul>
+            ${r.reasons.map(x => `<li>${x}</li>`).join("")}
+        </ul>
+    `;
+}
+
+</script>
+
+</body>
+</html>

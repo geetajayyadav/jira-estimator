@@ -1,0 +1,220 @@
+[
+    {
+        "issue": "SCRUM-1",
+        "predicted": 2
+    },
+    {
+        "issue": "SCRUM-1",
+        "predicted": 2,
+        "actual": 8.0,
+        "difference": 6.0
+    },
+    {
+        "issue": "SCRUM-1",
+        "predicted": 2,
+        "actual": 8.0,
+        "difference": 6.0
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 2,
+        "actual": 2.0,
+        "difference": 0.0
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 2,
+        "actual": 2.0,
+        "difference": 0.0
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 2,
+        "actual": 2.0,
+        "difference": 0.0
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 2,
+        "actual": 2.0,
+        "difference": 0.0
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 2,
+        "actual": 2.0,
+        "difference": 0.0
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 2,
+        "actual": 2.0,
+        "difference": 0.0
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 2,
+        "actual": 2.0,
+        "difference": 0.0
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 2,
+        "actual": 2.0,
+        "difference": 0.0
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 4,
+        "actual": 2.0,
+        "difference": -2.0
+    },
+    {
+        "issue": "scrum-10",
+        "predicted": 4,
+        "actual": 8.0,
+        "difference": 4.0
+    },
+    {
+        "issue": "scrum-15",
+        "predicted": 3,
+        "actual": null,
+        "difference": null
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 5,
+        "actual": 4.0,
+        "difference": -1.0
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 8,
+        "actual": 5.0,
+        "difference": -3.0
+    },
+    {
+        "issue": "scrum-11",
+        "predicted": 5,
+        "actual": null,
+        "difference": null
+    },
+    {
+        "issue": "scrum-6",
+        "predicted": 8,
+        "actual": 8.0,
+        "difference": 0.0
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 8,
+        "actual": 8.0,
+        "difference": 0.0,
+        "text": "User should be able to log in using registered credentials {'type': 'doc', 'version': 1, 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'As a registered banking user, I want to log in using my email/mobile number and password so that I can securely access my account dashboard and perform financial transactions.'}]}, {'type': 'paragraph'}, {'type': 'heading', 'attrs': {'level': 3}, 'content': [{'type': 'text', 'text': '\u2705 Acceptance Criteria'}]}, {'type': 'orderedList', 'attrs': {'order': 1}, 'content': [{'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'User should be able to enter valid email/mobile and password'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'System should authenticate credentials against database'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'On successful login, user should be redirected to dashboard'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'On invalid credentials, proper error message should be displayed'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Password field must be masked'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Login attempt should be logged for audit purposes'}]}]}]}, {'type': 'heading', 'attrs': {'level': 3}, 'content': [{'type': 'text', 'text': '\ud83e\uddea Test Scenarios (QA Perspective)'}]}, {'type': 'bulletList', 'content': [{'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Valid login credentials'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Invalid password'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Empty fields validation'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'SQL injection attempt'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Session timeout validation'}]}]}]}]}"
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 8,
+        "actual": 8.0,
+        "difference": 0.0,
+        "text": "User should be able to log in using registered credentials {'type': 'doc', 'version': 1, 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'As a registered banking user, I want to log in using my email/mobile number and password so that I can securely access my account dashboard and perform financial transactions.'}]}, {'type': 'paragraph'}, {'type': 'heading', 'attrs': {'level': 3}, 'content': [{'type': 'text', 'text': '\u2705 Acceptance Criteria'}]}, {'type': 'orderedList', 'attrs': {'order': 1}, 'content': [{'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'User should be able to enter valid email/mobile and password'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'System should authenticate credentials against database'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'On successful login, user should be redirected to dashboard'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'On invalid credentials, proper error message should be displayed'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Password field must be masked'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Login attempt should be logged for audit purposes'}]}]}]}, {'type': 'heading', 'attrs': {'level': 3}, 'content': [{'type': 'text', 'text': '\ud83e\uddea Test Scenarios (QA Perspective)'}]}, {'type': 'bulletList', 'content': [{'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Valid login credentials'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Invalid password'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Empty fields validation'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'SQL injection attempt'}]}]}, {'type': 'listItem', 'content': [{'type': 'paragraph', 'content': [{'type': 'text', 'text': 'Session timeout validation'}]}]}]}]}"
+    },
+    {
+        "issue": "scrum-10",
+        "predicted": 13,
+        "actual": 4.0,
+        "difference": -9.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-10",
+        "predicted": 13,
+        "actual": 13.0,
+        "difference": 0.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 8,
+        "actual": 8.0,
+        "difference": 0.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 8,
+        "actual": 8.0,
+        "difference": 0.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 8,
+        "actual": 8.0,
+        "difference": 0.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 8,
+        "actual": 8.0,
+        "difference": 0.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 8,
+        "actual": 8.0,
+        "difference": 0.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 8,
+        "actual": 8.0,
+        "difference": 0.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 8,
+        "actual": 8.0,
+        "difference": 0.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 8,
+        "actual": 8.0,
+        "difference": 0.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 5,
+        "actual": 8.0,
+        "difference": 3.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 5,
+        "actual": 5.0,
+        "difference": 0.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-1",
+        "predicted": 5,
+        "actual": 5.0,
+        "difference": 0.0,
+        "text": null
+    },
+    {
+        "issue": "scrum-101",
+        "predicted": 3,
+        "actual": null,
+        "difference": null,
+        "text": null
+    }
+]
