@@ -41,13 +41,11 @@ def estimate(issue_key: str):
             }
         )
 
-    # ✅ STEP 2: Validate Issue Data
+    # ✅ STEP 2: Validate Issue
     if not issue or "summary" not in issue:
         return JSONResponse(
             status_code=400,
-            content={
-                "error": "Invalid Jira issue key or no data found"
-            }
+            content={"error": "Invalid Jira issue key or no data found"}
         )
 
     try:
@@ -58,7 +56,17 @@ def estimate(issue_key: str):
             issue.get("priority", "Medium")
         )
 
-        predicted = result.get("story_points", 3)
+        # 🔥 VERY IMPORTANT FIX
+        if not result:
+            result = {}
+
+        result.setdefault("story_points", 3)
+        result.setdefault("ai_points", 3)
+        result.setdefault("confidence", 50)
+        result.setdefault("rule_score", 0)
+        result.setdefault("reasons", [])   # ⚠️ CRITICAL FIX
+
+        predicted = result["story_points"]
         actual = issue.get("actual_story_points")
 
         # ✅ STEP 4: Save Learning (safe)
@@ -75,10 +83,10 @@ def estimate(issue_key: str):
 
         # ✅ STEP 6: AI Reasoning
         ai_reasoning = (
-            f"AI predicted {result.get('ai_points', 0)} points with "
-            f"{result.get('confidence', 0)}% confidence. "
-            f"Rule engine added {result.get('rule_score', 0)} points. "
-            f"Final normalized to {result.get('story_points', 0)}."
+            f"AI predicted {result['ai_points']} points with "
+            f"{result['confidence']}% confidence. "
+            f"Rule engine added {result['rule_score']} points. "
+            f"Final normalized to {result['story_points']}."
         )
 
         # ✅ STEP 7: LLM Reasoning (safe)
@@ -88,9 +96,10 @@ def estimate(issue_key: str):
                 result
             )
         except Exception as e:
+            print("LLM Error:", e)
             llm_reasoning = "LLM reasoning not available"
 
-        # ✅ FINAL RESPONSE
+        # ✅ FINAL RESPONSE (SAFE)
         return {
             "issue": issue_key,
             "summary": issue.get("summary"),
